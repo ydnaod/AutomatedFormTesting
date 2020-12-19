@@ -15,7 +15,7 @@ const puppeteer = require('puppeteer');
 
   await page.click('#gform_submit_button_6');
   console.log('lets gooo');
-  //await page.screenshot({path: 'example.png'});
+  await page.screenshot({path: 'example.png'});
   // other actions...
   await browser.close();
 })();
