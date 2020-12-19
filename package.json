@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/ydnaod/AutomatedFormTesting#readme",
   "dependencies": {
-    "puppeteer": "^5.5.0"
+    "express": "^4.17.1",
+    "puppeteer": "^5.5.0",
+    "puppeteer-extra": "^3.1.15",
+    "puppeteer-extra-plugin-recaptcha": "^3.3.0"
   }
 }

@@ -1,17 +1,30 @@
 //const { response } = require('express');
-
+const config = require('./config');
 const puppeteer = require('puppeteer');
+//const puppeteer = require('puppeteer-extra');
+
+const RecaptchaPlugin = require('puppeteer-extra-plugin-recaptcha')
+/*puppeteer.use(
+  RecaptchaPlugin({
+    provider: {
+      id: '2captcha',
+      token: config.KEY, // REPLACE THIS WITH YOUR OWN 2CAPTCHA API KEY ⚡
+    },
+    visualFeedback: true, // colorize reCAPTCHAs (violet = detected, green = solved)
+  })
+)*/
 
 //http://ambler.thebeautyinstituteskp.edu/
 
+//puppeteer.launch({headless:true}).then
 (async () => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-
+  console.log(config.KEY)
 
   
   await page.goto('http://ambler.thebeautyinstituteskp.edu/');
-
+  await page.solveRecaptchas();
   /*
   await page.type('#input_6_1', 'AndyTest AmblerCOSDEskStartCareerNow'); 
   await page.type('#input_6_2', 'ydnaod@gmail.com'); 
@@ -20,7 +33,7 @@ const puppeteer = require('puppeteer');
 
   await page.click('#gform_submit_button_6');
   console.log('lets gooo');
-*/
+
 
   await Promise.all([
     page.waitForSelector('#input_7_7'),
@@ -64,9 +77,28 @@ const puppeteer = require('puppeteer');
   await page.type('#input_3_5', 'Esthetics'); 
 
   await page.click('#gform_submit_button_3');
-  //await page.click('.fancybox-close');
-
+  await Promise.all([
+    page.waitForSelector('#gform_confirmation_message_3'),
+    page.screenshot({path: 'example3.png'}),
+    page.click('.fancybox-item'),
+    page.screenshot({path: 'example4.png'})
+  ]);
+ 
+  await page.waitForTimeout(3000);
   await page.screenshot({path: 'example7.png'});
+  */
+
+ await page.type('#input_1_7', 'AndyTest'); 
+ await page.type('#input_1_8', 'AmblerCOSDEskBotRequestInfo'); 
+ await page.type('#input_1_4', 'Cosmetology'); 
+ await page.type('#input_1_2', 'ydnaod2@gmail.com'); 
+ await page.type('#input_1_3', '9086709534'); 
+
+ await page.click(`#recaptcha-demo-submit`);
+ await page.screenshot({path: 'example7.png'});
+ await page.waitForTimeout(2000);
+ await page.click('#gform_submit_button_1');
+
   // other actions...
   await browser.close();
 })();
