@@ -1,10 +1,10 @@
 //const { response } = require('express');
 const config = require('./config');
-const puppeteer = require('puppeteer');
-//const puppeteer = require('puppeteer-extra');
+//const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-extra');
 
-const RecaptchaPlugin = require('puppeteer-extra-plugin-recaptcha')
-/*puppeteer.use(
+const RecaptchaPlugin = require('puppeteer-extra-plugin-recaptcha');
+puppeteer.use(
   RecaptchaPlugin({
     provider: {
       id: '2captcha',
@@ -12,16 +12,12 @@ const RecaptchaPlugin = require('puppeteer-extra-plugin-recaptcha')
     },
     visualFeedback: true, // colorize reCAPTCHAs (violet = detected, green = solved)
   })
-)*/
+);
 
 //http://ambler.thebeautyinstituteskp.edu/
 
-//puppeteer.launch({headless:true}).then
-(async () => {
-  const browser = await puppeteer.launch();
+puppeteer.launch({headless:true}).then(async (browser) => {
   const page = await browser.newPage();
-  console.log(config.KEY)
-
   
   await page.goto('http://ambler.thebeautyinstituteskp.edu/');
   await page.solveRecaptchas();
@@ -94,11 +90,10 @@ const RecaptchaPlugin = require('puppeteer-extra-plugin-recaptcha')
  await page.type('#input_1_2', 'ydnaod2@gmail.com'); 
  await page.type('#input_1_3', '9086709534'); 
 
- await page.click(`#recaptcha-demo-submit`);
  await page.screenshot({path: 'example7.png'});
  await page.waitForTimeout(2000);
  await page.click('#gform_submit_button_1');
 
   // other actions...
   await browser.close();
-})();
+});
