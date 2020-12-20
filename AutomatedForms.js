@@ -1,3 +1,5 @@
+const ambler = require('./amblerDesk');
+
 //const { response } = require('express');
 const config = require('./config');
 //const puppeteer = require('puppeteer');
@@ -14,23 +16,23 @@ puppeteer.use(
   })
 );
 
+ambler.testForms();
 //http://ambler.thebeautyinstituteskp.edu/
-
 puppeteer.launch({headless:true}).then(async (browser) => {
   const page = await browser.newPage();
   
-  await page.goto('http://ambler.thebeautyinstituteskp.edu/');
-  await page.solveRecaptchas();
+  await page.goto('http://stroudsburg.thebeautyinstituteskp.edu/');
+  //await page.solveRecaptchas();
   
-  await page.type('#input_6_1', 'AndyTest AmblerCOSDEskStartCareerNow'); 
-  await page.type('#input_6_2', 'ydnaod@gmail.com'); 
-  await page.type('#input_6_3', '9086709533'); 
-  await page.type('#input_6_4', 'Cosmetology'); 
+  await page.type('#input_11_1', 'AndyTest StroudsCOSDEskStartCareerNow'); 
+  await page.type('#input_11_2', 'ydnaod@gmail.com'); 
+  await page.type('#input_11_3', '9086709533'); 
+  await page.type('#input_11_4', 'Cosmetology'); 
 
-  await page.click('#gform_submit_button_6');
+  await page.click('#gform_submit_button_11');
   console.log('lets gooo');
 
-
+/*
   await Promise.all([
     //page.waitForSelector('#input_7_7'),
     page.waitForTimeout(5000),
@@ -103,6 +105,7 @@ puppeteer.launch({headless:true}).then(async (browser) => {
  await page.screenshot({path: 'example11.png'});
  await page.waitForTimeout(8000);
  await page.screenshot({path: 'example12.png'});
+ */
   // other actions...
   await browser.close();
 });
