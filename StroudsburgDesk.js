@@ -1,4 +1,3 @@
-//const { response } = require('express');
 const config = require('./config');
 //const puppeteer = require('puppeteer');
 const puppeteer = require('puppeteer-extra');
@@ -14,8 +13,6 @@ puppeteer.use(
   })
 );
 
-//ambler.testForms();
-//http://ambler.thebeautyinstituteskp.edu/
 const testForms = () => puppeteer.launch({headless:true}).then(async (browser) => {
   const page = await browser.newPage();
   

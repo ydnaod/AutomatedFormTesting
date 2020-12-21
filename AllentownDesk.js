@@ -16,15 +16,15 @@ puppeteer.use(
 const testForms = () => puppeteer.launch({headless:true}).then(async (browser) => {
   const page = await browser.newPage();
   
-  await page.goto('http://philadelphia.thebeautyinstituteskp.edu/');
+  await page.goto('http://allentown.thebeautyinstituteskp.edu/');
   await page.solveRecaptchas();
   
-  await page.type('#input_6_1', 'AndyTest PhillyCOSDEskStartCareerNow'); 
-  await page.type('#input_6_2', 'ydnaod@gmail.com'); 
-  await page.type('#input_6_3', '9086709533'); 
-  await page.type('#input_6_4', 'Cosmetology'); 
+  await page.type('#input_13_1', 'AndyTest AllenCOSDEskStartCareerNow'); 
+  await page.type('#input_13_2', 'ydnaod@gmail.com'); 
+  await page.type('#input_13_3', '9086709534'); 
+  await page.type('#input_13_4', 'Cosmetology'); 
 
-  await page.click('#gform_submit_button_6');
+  await page.click('#gform_submit_button_13');
   console.log('lets gooo');
 
 
@@ -33,13 +33,13 @@ const testForms = () => puppeteer.launch({headless:true}).then(async (browser) =
     page.waitForTimeout(5000),
     page.click('.schedule'),
   ]);
-  await page.type('#input_7_7', 'AndyTest'); 
-  await page.type('#input_7_8', 'PhillyNAILSDEskScheduleATour'); 
-  await page.type('#input_7_2', 'ydnaod12@gmail.com'); 
-  await page.type('#input_7_3', '9086709534'); 
-  await page.type('#input_7_4', 'Nail Technician'); 
+  await page.type('#input_14_7', 'AndyTest'); 
+  await page.type('#input_14_8', 'AllenNAILSDEskScheduleATour'); 
+  await page.type('#input_14_2', 'ydnaod12@gmail.com'); 
+  await page.type('#input_14_3', '9086709534'); 
+  await page.type('#input_14_4', 'Nail Technician'); 
 
-   await page.click('#gform_submit_button_7');
+   await page.click('#gform_submit_button_14');
    //await page.screenshot({path: 'example.png'});
 
   await Promise.all([
@@ -64,13 +64,13 @@ const testForms = () => puppeteer.launch({headless:true}).then(async (browser) =
     page.click('.request-info')
   ]);
   await page.waitForTimeout(3000);
-  await page.type('#input_3_3', 'AndyTest'); 
-  await page.type('#input_3_1', 'PhillyCOSRequestInfo'); 
-  await page.type('#input_3_7', 'ydnaod12@gmail.com'); 
-  await page.type('#input_3_2', '9086709534'); 
-  await page.type('#input_3_4', 'Cosmetology'); 
+  await page.type('#input_8_3', 'AndyTest'); 
+  await page.type('#input_8_1', 'AllenCOSRequestInfo'); 
+  await page.type('#input_8_7', 'ydnaod12@gmail.com'); 
+  await page.type('#input_8_2', '9086709534'); 
+  await page.type('#input_8_5', 'Cosmetology'); 
 
-  await page.click('#gform_submit_button_3');
+  await page.click('#gform_submit_button_8');
   await page.screenshot({path: 'example5.png'});
   await Promise.all([
     //page.waitForSelector('#gform_confirmation_message_3'),
@@ -85,21 +85,31 @@ const testForms = () => puppeteer.launch({headless:true}).then(async (browser) =
   await page.screenshot({path: 'example8.png'});
   
 
- await page.type('#input_1_7', 'AndyTest'); 
- await page.type('#input_1_8', 'PhillyCOSDEskBotRequestInfo'); 
- await page.type('#input_1_4', 'Cosmetology'); 
- await page.type('#input_1_2', 'ydnaod2@gmail.com'); 
- await page.type('#input_1_3', '9086709534'); 
+ await page.type('#input_4_7', 'AndyTest'); 
+ await page.type('#input_4_8', 'AllenCOSDEskBotRequestInfo'); 
+ await page.type('#input_4_4', 'Cosmetology'); 
+ await page.type('#input_4_2', 'ydnaod2@gmail.com'); 
+ await page.type('#input_4_3', '9086709534'); 
 
  await page.screenshot({path: 'example9.png'});
  await page.waitForTimeout(2000);
- await page.click('#gform_submit_button_1');
+ await page.click('#gform_submit_button_4');
  await page.waitForTimeout(2000);
  await page.screenshot({path: 'example10.png'});
  await page.waitForTimeout(2000);
  await page.screenshot({path: 'example11.png'});
  await page.waitForTimeout(8000);
  await page.screenshot({path: 'example12.png'});
+
+ await page.type('#input_12_1', 'AndyTest AllenCOSDEskStartCareerNow'); 
+  await page.type('#input_12_6', 'ydnaod@gmail.com'); 
+  await page.type('#input_12_7', '9086709533'); 
+  await page.type('#input_12_3', '10002'); 
+  await page.type('#input_12_5', 'Cosmetology'); 
+
+  await page.click('#gform_submit_button_12');
+  await page.screenshot({path: 'example13.png'});
+  await page.waitForTimeout(10000);
  
   // other actions...
   await browser.close();

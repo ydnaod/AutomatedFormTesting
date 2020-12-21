@@ -1,5 +1,7 @@
 const ambler = require('./amblerDesk');
 const stroudsburg = require('./StroudsburgDesk');
+const philly = require('./PhillyDesk');
+const allentown = require('./AllentownDesk');
 
 //const { response } = require('express');
 const config = require('./config');
@@ -18,5 +20,7 @@ puppeteer.use(
 );
 
 //ambler.testForms();
-stroudsburg.testForms();
+//philly.testForms();
+//allentown.testForms();
+//stroudsburg.testForms();
 //http://ambler.thebeautyinstituteskp.edu/
