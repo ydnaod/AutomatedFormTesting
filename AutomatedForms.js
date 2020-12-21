@@ -4,6 +4,7 @@ const philly = require('./PhillyDesk');
 const allentown = require('./AllentownDesk');
 const mobileAmblerLP1 = require('./mobileAmblerLP1');
 
+/*
 //const { response } = require('express');
 const config = require('./config');
 //const puppeteer = require('puppeteer');
@@ -19,6 +20,7 @@ puppeteer.use(
     visualFeedback: true, // colorize reCAPTCHAs (violet = detected, green = solved)
   })
 );
+*/
 
 mobileAmblerLP1.testForms();
 //ambler.testForms();
