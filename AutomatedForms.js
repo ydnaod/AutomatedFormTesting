@@ -3,6 +3,7 @@ const stroudsburg = require('./StroudsburgDesk');
 const philly = require('./PhillyDesk');
 const allentown = require('./AllentownDesk');
 const mobileAmblerLP1 = require('./mobileAmblerLP1');
+const mobileAmblerLP2 = require('./mobileAmblerLP2');
 
 /*
 //const { response } = require('express');
@@ -21,8 +22,8 @@ puppeteer.use(
   })
 );
 */
-
-mobileAmblerLP1.testForms();
+mobileAmblerLP2.testForms();
+//mobileAmblerLP1.testForms();
 //ambler.testForms();
 //philly.testForms();
 //allentown.testForms();
