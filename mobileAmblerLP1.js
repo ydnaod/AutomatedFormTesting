@@ -4,11 +4,11 @@ const puppeteer = require('puppeteer');
 
 //http://ambler.thebeautyinstituteskp.edu/
 
-(async () => {
+const testForms = async () => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
   //await page.goto('http://m.thebeautyinstituteskp.edu/campus/ambler-beauty-schools?lead_src=google-mobile');
-  await page.goto('http://m.thebeautyinstituteskp.edu/campus/ambler-beauty-schools?lead_src=facebook-mobile');
+  await page.goto('http://m.thebeautyinstituteskp.edu/campus/ambler-beauty-schools/cosmetology?lead_src=facebook-mobile');
   await page.type('#ambler_firstname', 'AndyTestFacebook'); 
   await page.type('#ambler_lastname', 'AmblerCOSMOBStartCareerNow'); 
   await page.type('#ambler_phone', '9086709534'); 
@@ -20,4 +20,6 @@ const puppeteer = require('puppeteer');
   await page.screenshot({path: 'ambler.png'});
   // other actions...
   await browser.close();
-})();
+};
+
+module.exports = {testForms};

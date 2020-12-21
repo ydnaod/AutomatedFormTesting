@@ -2,6 +2,7 @@ const ambler = require('./amblerDesk');
 const stroudsburg = require('./StroudsburgDesk');
 const philly = require('./PhillyDesk');
 const allentown = require('./AllentownDesk');
+const mobileAmblerLP1 = require('./mobileAmblerLP1');
 
 //const { response } = require('express');
 const config = require('./config');
@@ -19,6 +20,7 @@ puppeteer.use(
   })
 );
 
+mobileAmblerLP1.testForms();
 //ambler.testForms();
 //philly.testForms();
 //allentown.testForms();
