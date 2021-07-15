@@ -65,10 +65,10 @@ const testForms = () => puppeteer.launch({headless:true}).then(async (browser) =
   ]);
   await page.waitForTimeout(3000);
   await page.type('#input_8_3', 'AndyTest'); 
-  await page.type('#input_8_1', 'AllenCOSRequestInfo'); 
+  await page.type('#input_8_1', 'AllenSKINRequestInfo'); 
   await page.type('#input_8_7', 'ydnaod12@gmail.com'); 
   await page.type('#input_8_2', '9086709534'); 
-  await page.type('#input_8_5', 'Cosmetology'); 
+  await page.type('#input_8_5', 'Esthetics'); 
 
   await page.click('#gform_submit_button_8');
   await page.screenshot({path: 'example5.png'});
